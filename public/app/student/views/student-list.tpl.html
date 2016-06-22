@@ -1,10 +1,24 @@
 <div id="content">
 
-<div class="row" style="margin-bottom:13px;">
-	<div class="col-md-4">
-		<span>Name:</span>
-		<input class="form-control" type="text" ng-model="name"></input>	
-	</div>
-</div>
+  <div class="row spacing" >
+	  <div class="col-md-4">
+		  <input class="form-control" type="text" ng-model="student.name" placeholder="name"/>
+	  </div>
+	  <div class="col-md-4">
+		  <input class="form-control" type="text" ng-model="student.age" placeholder="age"/>
+	  </div>
+	  <div class="col-md-4">
+		  <button class="btn btn-primary" ng-click="save()" type="text" ng-model="age">Save</button>	
+	  </div>
+  </div>
+
+  <div class="row spacing">
+	  <ul class="list-group">
+		  <li ng-repeat="student in students" class="list-group-item">
+			  <span>{{student.name}}</span>
+			  <span>{{student.age}}</span>
+		  </li>
+	  </ul>
+  </div>
 
 </div>

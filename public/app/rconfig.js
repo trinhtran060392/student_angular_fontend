@@ -9,6 +9,7 @@ var require = {
   			'angular-aria': '../plugin/angular-aria/angular-aria.min',
   			'angular-ui-router': '../plugin/angular-ui-router/release/angular-ui-router.min',
   			'domReady': '../plugin/requirejs-domready/domReady',
+        'angular-cookies':'../plugin/angular-cookies/angular-cookies.min',
   			// app js file includes
         'appConfig': 'app.config',
         'modules-includes': 'includes'
@@ -21,7 +22,8 @@ var require = {
         'angular-animate': { deps: ['angular'] },
         'angular-ui-router': { deps: ['angular'] },
         'angular-couch-potato': { deps: ['angular'] },
-        'angular-ui-router': { deps: ['angular'] }
+        'angular-ui-router': { deps: ['angular'] },
+        'angular-cookies': { deps: ['angular' ]}
   },
   priority: [
     'jquery',

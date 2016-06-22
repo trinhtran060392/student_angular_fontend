@@ -2,14 +2,17 @@ define(['student/module'], function (module) {
 
   'use strict';
 
-  module.registerFactory('StudentService', ['$http', function ($http) {
+  module.registerFactory('StudentService', ['$http', '$cookies', function ($http, $cookies) {
 
     return {
-      create: function (name, callback) {
+      save: function (student, callback) {
         var request = {
           method: 'POST',
-          url: appConfig.RestEntry + '/api/student',
-          data: {name : name}
+          url: appConfig.RestEntry + '/student',
+          data: student,
+          headers: {
+            'X-Auth-Token': $cookies.get('X-Auth-Token')
+          }
         };
 
         $http(request).success(function(data, status) {
@@ -24,8 +27,8 @@ define(['student/module'], function (module) {
           url: appConfig.RestEntry + '/student'
         };
 
-        $http(request).success(function(data, status) {
-          callback(data, status);
+        $http(request).success(function(data, status, headers, config) {
+          callback(data, status, headers, config);
         }).error(function(data, status) {
           callback(data, status);
         });

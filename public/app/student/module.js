@@ -1,12 +1,13 @@
 define([
   'angular',
   'angular-couch-potato',
-  'angular-ui-router'
+  'angular-ui-router',
+  'angular-cookies'
 ], function(ng, couchPotato) {
 
   'use strict';
 
-  var module = ng.module('app.student', ['ui.router']);
+  var module = ng.module('app.student', ['ui.router', 'ngCookies']);
 
   module.config(function($stateProvider, $couchPotatoProvider) {
     $stateProvider
